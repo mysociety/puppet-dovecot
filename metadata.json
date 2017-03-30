@@ -1,0 +1,14 @@
+{
+  "name": "mysociety-dovecot",
+  "version": "0.1.0",
+  "author": "mySociety",
+  "summary": "Install and Configure Dovecot",
+  "license": "MIT",
+  "source": "https://github.com/mysociety/puppet-dovecot",
+  "project_page": "https://github.com/mysociety/puppet-dovecot",
+  "issues_url": "https://github.com/mysociety/puppet-dovecot/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
