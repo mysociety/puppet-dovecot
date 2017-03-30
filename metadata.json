@@ -1,5 +1,5 @@
 {
-  "name": "mysociety-dovecot",
+  "name": "puppet-dovecot",
   "version": "0.1.0",
   "author": "mySociety",
   "summary": "Install and Configure Dovecot",
