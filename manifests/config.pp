@@ -12,6 +12,11 @@ class dovecot::config inherits dovecot {
     content => template('dovecot/dovecot.conf.erb'),
   }
 
+  # Core settings file
+  file { "${dovecot::config_dir}/conf.d/10-mail.conf":
+    content => template('dovecot/10-mail.conf.erb'),
+  }
+
   # SSL
   file { "${dovecot::config_dir}/conf.d/10-ssl.conf":
     content => template('dovecot/10-ssl.conf.erb'),

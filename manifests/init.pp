@@ -4,6 +4,10 @@
 #
 # === Parameters
 #
+# [*mail_privileged_group*]
+#   Group to enable temporarily for privileged operations.
+#   Default: mail
+#
 # [*package_ensure*]
 #   Status of insalled packages.
 #   Default: installed
@@ -75,21 +79,22 @@
 #
 class dovecot (
   # install
-  $package_ensure      = 'installed',
-  $package_manage      = true,
-  $packages            = [ 'dovecot-pop3d' ],
+  $package_ensure        = 'installed',
+  $package_manage        = true,
+  $packages              = [ 'dovecot-pop3d' ],
   # service
-  $service_ensure      = 'running',
-  $service_manage      = true,
-  $service_name        = 'dovecot',
+  $service_ensure        = 'running',
+  $service_manage        = true,
+  $service_name          = 'dovecot',
   # config
-  $config_dir          = '/etc/dovecot/',
+  $config_dir            = '/etc/dovecot/',
+  $mail_privileged_group = 'mail',
   # SSL
-  $ssl                 = 'required',
-  $ssl_cert            = '</etc/dovecot/dovecot.pem',
-  $ssl_key             = '</etc/dovecot/private/dovecot.pem',
-  $ssl_protocols       = '!SSLv2 !SSLv3',
-  $ssl_cipher_list     = 'ALL:!LOW:!SSLv2:!EXP:!aNULL',
+  $ssl                   = 'required',
+  $ssl_cert              = '</etc/dovecot/dovecot.pem',
+  $ssl_key               = '</etc/dovecot/private/dovecot.pem',
+  $ssl_protocols         = '!SSLv2 !SSLv3',
+  $ssl_cipher_list       = 'ALL:!LOW:!SSLv2:!EXP:!aNULL',
 )
 {
 
