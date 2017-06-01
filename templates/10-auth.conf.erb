@@ -1,0 +1,20 @@
+## Authentication
+<% @passdb.each do |passdb,hash| -%>
+# <%= passdb %>
+passdb {
+<% hash.each do |key,value| -%>
+  <%= key %> = <%= value %>
+<% end -%>
+}
+<% end -%>
+
+
+## User Databases.
+<% @userdb.each do |userdb,hash| -%>
+# <%= userdb %>
+userdb {
+<% hash.each do |key,value| -%>
+  <%= key %> = <%= value %>
+<% end -%>
+}
+<% end -%>

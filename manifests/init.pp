@@ -56,6 +56,14 @@
 #   SSL Ciphers
 #   Default: ALL:!LOW:!SSLv2:!EXP:!aNULL
 #
+# [*passdb*]
+#   Hash containing passdb configuration. The subkeys used are sorted.
+#   Default: passdb{pam}{driver} = pam.
+#
+# [*userdb*]
+#   Hash containing userdb configuration. The subkeys used are sorted.
+#   Default: userdb{passwd}{driver} = passwd.
+#
 # === Examples
 #
 #  Deploy with defaults, including self-signed SSL certificate:
@@ -79,28 +87,33 @@
 #
 class dovecot (
   # install
-  $package_ensure        = 'installed',
-  $package_manage        = true,
-  $packages              = [ 'dovecot-pop3d' ],
+  String $package_ensure,
+  Boolean $package_manage,
+  Array $packages,
   # service
-  $service_ensure        = 'running',
-  $service_manage        = true,
-  $service_name          = 'dovecot',
+  String $service_ensure,
+  Boolean $service_manage,
+  String $service_name,
   # config
-  $config_dir            = '/etc/dovecot/',
-  $mail_privileged_group = 'mail',
+  String $config_dir,
+  String $mail_privileged_group,
+  Hash $passdb,
+  Hash $userdb,
   # SSL
-  $ssl                   = 'required',
-  $ssl_cert              = '</etc/dovecot/dovecot.pem',
-  $ssl_key               = '</etc/dovecot/private/dovecot.pem',
-  $ssl_protocols         = '!SSLv2 !SSLv3',
-  $ssl_cipher_list       = 'ALL:!LOW:!SSLv2:!EXP:!aNULL',
+  String $ssl,
+  String $ssl_cert,
+  String $ssl_key,
+  String $ssl_protocols,
+  String $ssl_cipher_list,
 )
 {
 
   contain dovecot::install
   contain dovecot::config
   contain dovecot::service
-  Class['::dovecot::install'] -> Class['::dovecot::config'] ~> Class['::dovecot::service']
+
+  Class['::dovecot::install']
+  -> Class['::dovecot::config']
+  ~> Class['::dovecot::service']
 
 }
