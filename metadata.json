@@ -8,7 +8,25 @@
   "project_page": "https://github.com/mysociety/puppet-dovecot",
   "issues_url": "https://github.com/mysociety/puppet-dovecot/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
-  ]
+    {
+      "name":"puppetlabs-stdlib",
+      "version_requirement":">= 4.16.0 < 5.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.9.0 < 5.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
+    }
+  ],
+  "description": "Dovecot module for Debian."
 }
-
