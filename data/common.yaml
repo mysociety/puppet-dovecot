@@ -10,6 +10,9 @@ dovecot::service_name: dovecot
 
 dovecot::config_dir: /etc/dovecot/
 dovecot::mail_privileged_group: mail
+dovecot::mmap_disable: 'no'
+dovecot::mail_fsync: optimized
+
 dovecot::passdb:
   pam:
     driver: pam

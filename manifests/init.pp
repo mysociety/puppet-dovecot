@@ -97,6 +97,8 @@ class dovecot (
   # config
   String $config_dir,
   String $mail_privileged_group,
+  String $mmap_disable,
+  String $mail_fsync,
   Hash $passdb,
   Hash $userdb,
   # SSL
