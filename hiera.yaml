@@ -5,5 +5,11 @@ defaults:
   data_hash: yaml_data
 
 hierarchy:
+  - name: 'OS Release'
+    path: "os/%{facts.os.family}/%{facts.os.distro.codename}.yaml"
+
+  - name: 'OS Family'
+    path: "os/%{facts.os.family}.yaml"
+
   - name: 'Common data'
     path: 'common.yaml'
