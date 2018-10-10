@@ -1,3 +1,6 @@
+#
+# @summary Internal class to configure Dovecot.
+#
 class dovecot::config inherits dovecot {
 
   File {
