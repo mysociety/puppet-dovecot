@@ -12,6 +12,7 @@ dovecot::config_dir: /etc/dovecot/
 dovecot::mail_privileged_group: mail
 dovecot::mmap_disable: 'no'
 dovecot::mail_fsync: optimized
+dovecot::mail_location: 'mbox:~/mail:INBOX=/var/mail/%u'
 
 dovecot::passdb:
   pam:
