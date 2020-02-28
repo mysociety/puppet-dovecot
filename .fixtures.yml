@@ -1,3 +1,6 @@
 fixtures:
   symlinks:
     "dovecot": "#{source_dir}"
+  forge_modules:
+    stdlib:
+      repo: "puppetlabs/stdlib"
