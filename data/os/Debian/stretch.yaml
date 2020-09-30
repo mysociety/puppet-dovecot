@@ -1,2 +1,4 @@
 ---
-dovecot::ssl_protocols: '!SSLv3'
+dovecot::packages:
+  - dovecot-pop3d
+  - ssl-cert
