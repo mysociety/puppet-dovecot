@@ -1,0 +1,30 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: ['2.7', '3.0', '3.1']
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set-up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
+
+    - name: Validate files
+      run: bundle exec rake validate
+
+    - name: Run specs
+      run: bundle exec rake spec
+      
+      
+      
