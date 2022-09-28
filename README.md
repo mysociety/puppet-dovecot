@@ -16,7 +16,9 @@
 
 This is a simple module to install and manage a secure Dovecot-based POP3 service.
 
-Currently tested on Debian 7, support coming for Debian 8 and 9, with a probable focus on 9.
+This module requires at least Dovecot 2.3.3.
+
+Currently tested on Debian 9 (using Dovecot from backports), 10 and 11.
 
 ## Module Description
 
@@ -24,7 +26,8 @@ This module installs, configures and manages a secure dovecot based POP3 service
 
 It only managed the files required, all others are left as the installer deploys them.
 
-Default settings require encryption and disable SSLv2 (where needed) and SSLv3.
+Default settings require TLSv2+ and disables all non-ECC DH cliphers, obviating the need
+to use a Diffie-Helman paramters file and the `ssl_dh` option.
 
 ## Setup
 
@@ -61,9 +64,7 @@ See the comments in `init.pp` for a list of parameters and defaults.
 ## Limitations
 
 Currently this module only configures some very basic settings that are relevant 
-to our usage, and has only been tested on Debian 7 and 9.
-
-Uses `contain` rather than the `anchor` pattern, so requires at least Puppet 3.4.
+to our usage.
 
 We may add further features as we need them.
 
