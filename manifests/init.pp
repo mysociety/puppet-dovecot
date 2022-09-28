@@ -17,7 +17,7 @@
 # @param ssl SSL status.
 # @param ssl_cert Location of SSL cert. Default: `</etc/dovecot/dovecot.pem`
 # @param ssl_key Location of SSL key.  Default: `</etc/dovecot/private/dovecot.pem`
-# @param ssl_protocols SSL Protocol definitions. Deafult: `!SSLv2 !SSLv3`
+# @param ssl_min_protocol The minimum SSL protocol version Dovecot accepts
 # @param ssl_cipher_list SSL Ciphers Default: `ALL:!LOW:!SSLv2:!EXP:!aNULL`
 #
 # @example Deploy with defaults, including self-signed SSL certificate:
@@ -56,7 +56,7 @@ class dovecot (
   String $ssl,
   String $ssl_cert,
   String $ssl_key,
-  String $ssl_protocols,
+  String $ssl_min_protocol,
   String $ssl_cipher_list,
 )
 {
