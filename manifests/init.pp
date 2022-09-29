@@ -53,10 +53,10 @@ class dovecot (
   Hash $passdb,
   Hash $userdb,
   # SSL
-  String $ssl,
+  Enum['yes', 'no', 'required'] $ssl,
   String $ssl_cert,
   String $ssl_key,
-  String $ssl_min_protocol,
+  Enum['TLSv1.2'] $ssl_min_protocol,
   String $ssl_cipher_list,
 )
 {
