@@ -22,7 +22,7 @@ dovecot::userdb:
     driver: passwd
 
 dovecot::ssl: required
-dovecot::ssl_cert: '</etc/dovecot/dovecot.pem'
-dovecot::ssl_key: '</etc/dovecot/private/dovecot.pem'
+dovecot::ssl_cert: '</etc/dovecot/private/dovecot.pem'
+dovecot::ssl_key: '</etc/dovecot/private/dovecot.key'
 dovecot::ssl_min_protocol: 'TLSv1.2'
 dovecot::ssl_cipher_list: 'ALL:!DH:!kRSA:!SRP:!kDHd:!DSS:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!PSK:!RC4:!ADH:!LOW@STRENGTH'
