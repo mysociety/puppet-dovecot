@@ -58,15 +58,14 @@ class dovecot (
   String $ssl_key,
   Enum['TLSv1.2'] $ssl_min_protocol,
   String $ssl_cipher_list,
-)
-{
+) {
 
   contain dovecot::install
   contain dovecot::config
   contain dovecot::service
 
-  Class['::dovecot::install']
-  -> Class['::dovecot::config']
-  ~> Class['::dovecot::service']
+  Class['dovecot::install']
+  -> Class['dovecot::config']
+  ~> Class['dovecot::service']
 
 }
