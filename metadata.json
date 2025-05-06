@@ -1,6 +1,6 @@
 {
   "name": "puppet-dovecot",
-  "version": "4.0.0-rc1",
+  "version": "4.0.0",
   "author": "mySociety",
   "summary": "Install and Configure Dovecot",
   "license": "MIT",
