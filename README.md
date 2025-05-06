@@ -16,9 +16,9 @@
 
 This is a simple module to install and manage a secure Dovecot-based POP3 service.
 
-This module requires at least Dovecot 2.3.3.
+This module requires at least Dovecot 2.3.13.
 
-Currently tested on Debian 9 (using Dovecot from backports), 10 and 11.
+Currently tested on Debian 11 and 12.
 
 ## Module Description
 
